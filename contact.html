@@ -35,8 +35,6 @@
 </head>
 
 <body class="page-contact">
-  <i class="fa fa-cross">Icon</i>
-  <i class="bi bi-backspace"></i>
   <!-- ======= Header ======= -->
   <header id="header" class="header d-flex align-items-center fixed-top">
     <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
@@ -268,7 +266,7 @@
       document.getElementById("myDIV").appendChild(div);
 
       document.body.style.overflow = 'hidden'
-      fetch('https://api-for-emais.herokuapp.com/api/send-mail-everday-sol', {
+      fetch('https://api-for-emails.herokuapp.com/api/send-mail-everday-sol', {
         method: "post",
         body: JSON.stringify({
           name: name.value,
