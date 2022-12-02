@@ -250,7 +250,6 @@
     submitBTN.addEventListener('click', (e) => {
       e.preventDefault();
       if ((!email || email.value === '') || (!name || name.value === '')) {
-
         alert('Please fill all required values')
         return;
       }
@@ -292,7 +291,6 @@
         serverSuccessDIV.style.opacity = "1";
         serverSuccessDIV.style.visibility = "visible";
         serverSuccessDIV.innerHTML = res.message + `<i class="bi bi-backspace" id="cross" onClick="closeErr('success')">`;
-        // window.location = "final.html";
 
         setTimeout(() => {
           serverSuccessDIV.style.transform = "translate(-50%, -50px)";
